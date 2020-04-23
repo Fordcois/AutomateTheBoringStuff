@@ -1,0 +1,22 @@
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+Dragonloot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+
+def display_inventory(inventory):
+    total_items = 0
+    print('Inventory:')
+    for k, v in inventory.items():
+        print(str(v) + ' ' + k)
+        total_items += v
+    print()
+    print('Total number of items: ' + str(total_items))
+
+
+def take_items(item_list, inventory):
+    for i in range(len(item_list)):
+        if (item_list[i]) in inventory:
+            inventory[(item_list[i])] += 1
+        else:
+            inventory[(item_list[i])] = 1
+    
+take_items(Dragonloot, inventory)
+display_inventory(inventory)
