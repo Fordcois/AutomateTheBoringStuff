@@ -1,0 +1,21 @@
+tableData = [['Apples', 'Oranges', 'Cherries', 'Banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['Dogs', 'Cats', 'Moose', 'Goose']]
+
+x = (len(tableData))
+Y = (len(tableData[0]))
+
+# Setting Colum Width
+for t in range(x):
+    colWidth = 0
+    for i in range(Y):
+        if (len(tableData[t][i])) >= colWidth:
+            colWidth = (len(tableData[t][i]))
+    for i in range(Y):
+        tableData[t][i] = (tableData[t][i].rjust(colWidth))
+
+# Printing
+for t in range(Y):
+    for i in range(x):
+        print(tableData[i][t], end=' ')
+    print('')
